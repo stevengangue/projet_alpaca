@@ -26,68 +26,82 @@
                     
             <div class="buttons-group">
                         <h3>Background</h3>
-                        <button onclick="changePart('background', 'blue60.png')">Background 1</button><br>
-                        <button onclick="changePart('background', 'green60.png')">Background 2</button><br>
-                        <button onclick="changePart('background', 'red50.png')">Background 3</button><br>
-                        <button onclick="changePart('background', 'yellow60.png')">Background 4</button><br>
+                        <select onchange="changePart('background',this.value)">
+                            <option value='blue60.png'>Background 1</option><br>
+                            <option value= 'green60.png'>Background 2</option><br>
+                            <option value= 'red50.png'>Background 3</option><br>
+                            <option value='yellow60.png'>Background 4</option><br>
+                        </select>
             </div>
 
                     
             <div class="buttons-group">
                         <h3>Oreilles (Ears)</h3>
-                        <button onclick="changePart('ears', 'tilt-forward.png')">Oreilles 1</button><br>
-                        <button onclick="changePart('ears', 'tilt-backward.png')">Oreilles 2</button><br>
-                        
+                        <select onchange="changePart('ears',this.value)">
+                            <option value= 'tilt-forward.png'>Oreilles 1</option><br>
+                            <option value='tilt-backward.png'>Oreilles 2</option><br>
+                        </select> 
             </div>
 
             <div class="buttons-group">
                         <h3>Cou (Neck)</h3>
-                        <button onclick="changePart('neck', 'bend-backward.png')">Cou 1</button><br>
-                        <button onclick="changePart('neck', 'bend-forward.png')">Cou 2</button><br>
-                        <button onclick="changePart('neck', 'thick.png')">Cou 3</button><br>
-                        <button onclick="changePart('neck', 'default.png')">dafault</button><br>
+                        <select onchange="changePart('neck',this.value)">
+                            <option value= 'bend-backward.png'>Cou 1</option><br>
+                            <option value='bend-forward.png'>Cou 2</option><br>
+                            <option value='thick.png'>Cou 3</option><br>
+                            <option value='default.png'>dafault</option><br>
+                        </select>
             </div>
 
             <div class="buttons-group">
                         <h3>Cheveux (Hair)</h3>
-                        <button onclick="changePart('hair', 'bang.png')">Cheveux 1</button><br>
-                        <button onclick="changePart('hair', 'curls.png')">Cheveux 2</button><br>
-                        <button onclick="changePart('hair', 'elegant.png')">Cheveux 3</button><br>
-                        <button onclick="changePart('hair', 'fancy.png')">Cheveux 4</button><br>
-                        <button onclick="changePart('hair', 'default.png')">default</button><br>
+                        <select onchange="changePart('hair',this.value)">
+                            <option value='bang.png'>Cheveux 1</option><br>
+                            <option value='curls.png'>Cheveux 2</option><br>
+                            <option value='elegant.png'>Cheveux 3</option><br>
+                            <option value='fancy.png'>Cheveux 4</option><br>
+                            <option value='default.png'>default</option><br>
+                        </select>
             </div>
 
                     
             <div class="buttons-group">
                         <h3>Bouche (Mouth)</h3>
-                        <button onclick="changePart('mouth', 'astonished.png')">Bouche 1</button><br>
-                        <button onclick="changePart('mouth', 'eating.png')">Bouche 2</button><br>
-                        <button onclick="changePart('mouth', 'laugh.png')">Bouche 3</button><br>
-                        <button onclick="changePart('mouth', 'default.png')">default</button><br>
+                        <select onchange="changePart('mouth',this.value)">
+                            <option value='astonished.png'>Bouche 1</option><br>
+                            <option value='eating.png'>Bouche 2</option><br>
+                            <option value='laugh.png'>Bouche 3</option><br>
+                            <option value='default.png'>default</option><br>
+                        </select>
             </div>
 
                     
             <div class="buttons-group">
                         <h3>Yeux (Eyes)</h3>
-                        <button onclick="changePart('eyes', 'angry.png')">Yeux 1</button><br>
-                        <button onclick="changePart('eyes', 'panda.png')">Yeux 2</button><br>
-                        <button onclick="changePart('eyes', 'smart.png')">Yeux 3</button><br>
+                        <select onchange="changePart('eyes',this.value)">
+                            <option value='angry.png'>Yeux 1</option><br>
+                            <option value='panda.png'>Yeux 2</option><br>
+                            <option value='smart.png'>Yeux 3</option><br>
+                        </select>
             </div>
 
             <div class="buttons-group">
                         <h3>Accessoires (Accessories)</h3>
-                        <button onclick="changePart('accessories', 'glasses.png')">Lunettes</button><br>
-                        <button onclick="changePart('accessories', 'headphone.png')">Casque</button><br>
-                        <button onclick="changePart('accessories', 'flower.png')">fleure</button><br>
+                        <select onchange="changePart('accessories',this.value)">
+                            <option value='glasses.png'>Lunettes</option><br>
+                            <option value='headphone.png'>Casque</option><br>
+                            <option value='flower.png'>fleure</option><br>
+                        </select>
                         
             </div>
                         
             <div class="buttons-group">
                         <h3>Pieds (Legs)</h3>
-                        <button onclick="changePart('leg', 'default.png')">Normal</button>
-                        <button onclick="changePart('leg', 'tilt-backward.png')">Penché arrière</button>
-                    
-                        <button onclick="changePart('leg', 'tilt-forward.png')">Penché avant</button>
+                        <select onchange="changePart('leg',this.value)">
+                            <option value='default.png'>Normal</option>
+                            <option value='tilt-backward.png'>Penché arrière</option>
+                            <option value='tilt-forward.png'>Penché avant</option>
+                        </select>
             </div>
 
         </div>
