@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avatar</title>
+    <link href="index.css" rel="stylesheet">
+</head>
+   <body>
+        <!--Affichage de l'image dans l'ordre-->
+        <h1><i>Generation d'alpaca</i></h1>
+        <div id="alpaga-container">
+            <img id="background" src="image/alpaca/background/blue50.png" alt="Background" />
+            <img id="ears" src="image/alpaca/ears/default.png" alt="Ears" />
+            <img id="neck" src="image/alpaca/neck/default.png" alt="Neck" />
+            <img id="hair" src="image/alpaca/hair/default.png" alt="Hair" />
+            <img id="mouth" src="image/alpaca/mouth/default.png" alt="Mouth" />
+            <img id="eyes" src="image/alpaca/eyes/default.png" alt="Eyes" />
+            <img id="accessories" src="image/alpaca/accessories/headphone.png" alt="Accessories" />
+            <img id="leg" src="image/alpaca/leg/default.png" alt="Leg" />
+        </div>
+        <button id="randomize">Aleatoire</button>
+        <button id="download">Télécharger</button>
+        <!--Button pour modifier les parties de l'image-->
+        <div class="container">
+                    
+            <div class="buttons-group">
+                        <h3>Background</h3>
+                        <button onclick="changePart('background', 'blue60.png')">Background 1</button><br>
+                        <button onclick="changePart('background', 'green60.png')">Background 2</button><br>
+                        <button onclick="changePart('background', 'red50.png')">Background 3</button><br>
+                        <button onclick="changePart('background', 'yellow60.png')">Background 4</button><br>
+            </div>
+
+                    
+            <div class="buttons-group">
+                        <h3>Oreilles (Ears)</h3>
+                        <button onclick="changePart('ears', 'tilt-forward.png')">Oreilles 1</button><br>
+                        <button onclick="changePart('ears', 'tilt-backward.png')">Oreilles 2</button><br>
+                        
+            </div>
+
+            <div class="buttons-group">
+                        <h3>Cou (Neck)</h3>
+                        <button onclick="changePart('neck', 'bend-backward.png')">Cou 1</button><br>
+                        <button onclick="changePart('neck', 'bend-forward.png')">Cou 2</button><br>
+                        <button onclick="changePart('neck', 'thick.png')">Cou 3</button><br>
+                        <button onclick="changePart('neck', 'default.png')">dafault</button><br>
+            </div>
+
+            <div class="buttons-group">
+                        <h3>Cheveux (Hair)</h3>
+                        <button onclick="changePart('hair', 'bang.png')">Cheveux 1</button><br>
+                        <button onclick="changePart('hair', 'curls.png')">Cheveux 2</button><br>
+                        <button onclick="changePart('hair', 'elegant.png')">Cheveux 3</button><br>
+                        <button onclick="changePart('hair', 'fancy.png')">Cheveux 4</button><br>
+                        <button onclick="changePart('hair', 'default.png')">default</button><br>
+            </div>
+
+                    
+            <div class="buttons-group">
+                        <h3>Bouche (Mouth)</h3>
+                        <button onclick="changePart('mouth', 'astonished.png')">Bouche 1</button><br>
+                        <button onclick="changePart('mouth', 'eating.png')">Bouche 2</button><br>
+                        <button onclick="changePart('mouth', 'laugh.png')">Bouche 3</button><br>
+                        <button onclick="changePart('mouth', 'default.png')">default</button><br>
+            </div>
+
+                    
+            <div class="buttons-group">
+                        <h3>Yeux (Eyes)</h3>
+                        <button onclick="changePart('eyes', 'angry.png')">Yeux 1</button><br>
+                        <button onclick="changePart('eyes', 'panda.png')">Yeux 2</button><br>
+                        <button onclick="changePart('eyes', 'smart.png')">Yeux 3</button><br>
+            </div>
+
+            <div class="buttons-group">
+                        <h3>Accessoires (Accessories)</h3>
+                        <button onclick="changePart('accessories', 'glasses.png')">Lunettes</button><br>
+                        <button onclick="changePart('accessories', 'headphone.png')">Casque</button><br>
+                        <button onclick="changePart('accessories', 'flower.png')">fleure</button><br>
+                        
+            </div>
+                        
+            <div class="buttons-group">
+                        <h3>Pieds (Legs)</h3>
+                        <button onclick="changePart('leg', 'default.png')">Normal</button>
+                        <button onclick="changePart('leg', 'tilt-backward.png')">Penché arrière</button>
+                    
+                        <button onclick="changePart('leg', 'tilt-forward.png')">Penché avant</button>
+            </div>
+
+        </div>
+        <script>
+            // Fonction pour changer une partie avec une image précise
+            function changePart(part, filename) {
+                document.getElementById(part).src = `image/alpaca/${part}/${filename}`;
+            }
+
+        // Liste des options possibles pour chaque partie
+        const options = {
+                background: ['blue50.png', 'blue60.png', 'green60.png', 'red50.png', 'yellow60.png'],
+                ears: ['tilt-forward.png', 'tilt-backward.png'],
+                neck: ['bend-backward.png', 'bend-forward.png', 'thick.png', 'default.png'],
+                hair: ['bang.png', 'curls.png', 'elegant.png', 'fancy.png', 'default.png'],
+                mouth: ['astonished.png', 'eating.png', 'laugh.png', 'default.png'],
+                eyes: ['angry.png', 'panda.png', 'smart.png'],
+                accessories: ['glasses.png', 'headphone.png', 'flower.png'],
+                leg: ['default.png', 'tilt-backward.png', 'tilt-forward.png'],
+            };
+
+        // Randomise une partie
+        function randomizePart(part) {
+                const imgs = options[part];// Récupère la liste des images possibles pour cette partie
+                if (!imgs) return;// Si aucune image définie, on arrête la fonction
+                const randomImg = imgs[Math.floor(Math.random() * imgs.length)];// Choisit une image aléatoire dans la liste
+                changePart(part, randomImg); // Change l’image affichée pour cette partie
+        }
+
+        // Bouton Randomiser
+        document.getElementById('randomize').addEventListener('click', () => {
+                for (const part in options) {// Pour chaque partie définie dans `options`
+                randomizePart(part);// On randomise son image avec la fonction précédente
+                }
+            });
+
+        // Bouton Télécharger
+        document.getElementById('download').addEventListener('click', () => {
+                const width = 400;  // adapter selon la taille  de l'image 
+                const height = 400;
+                const canvas = document.createElement('canvas');// Création d’un élément canvas
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d'); //Récupère le contexte 2D pour dessiner
+
+                const partsOrder = ['background', 'ears', 'neck', 'hair', 'mouth', 'eyes', 'accessories', 'leg'];//est t'un tableau qui deffini l'ordre dans la quel vas etre surperposer chaque partie de l'alpaca
+
+                    // Charger toutes les images dans des Promesses
+                    const  promises= partsOrder.map(part => {
+                    return new Promise((resolve) => {
+                        const img = new Image();
+                        img.crossOrigin = 'anonymous';// Permet de ne pas avoir d’erreur CORS (utile si images externes)
+                        img.src = document.getElementById(part).src;// Récupère l’URL de l’image affichée actuellement dans le DOM
+                        img.onload = () => resolve(img);// Quand l’image est chargée, on "résout" la promesse avec l’image
+                        img.onerror = () => resolve(null); // ignorer si image pas chargée
+                    });
+                });
+                //Promise.all est une méthode JavaScript qui permet d’exécuter plusieurs promesses en parallèle
+                    //et d’attendre que toutes soient terminées avant de continuer.
+                    Promise.all(promises).then(images => {
+                        images.forEach(img => {
+                            if(img) ctx.drawImage(img, 0, 0, width, height);// Dessine chaque image chargée sur le canvas
+                        });
+                        // Télécharger l'image
+                        const link = document.createElement('a');
+                        link.download = 'ton alpaga.png';//Nom du fichier téléchargé
+                        link.href = canvas.toDataURL('image/png');//Convertit le canvas en URL de données PNG
+                        link.click(); //Simule un clic sur le lien pour lancer le téléchargement
+                    });
+            });
+        </script>
+    </body>
+</html>

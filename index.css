@@ -1,0 +1,50 @@
+body {
+  display: grid;
+  place-items: center; /* centre horizontalement et verticalement */
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(2, 2, 51);
+}
+
+h1 {
+  font-size: 2.5em;
+  margin: 20px;
+  color:white;
+}
+h3{
+    color:white;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 30px;
+  border: 10px;
+
+}
+
+#alpaga-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#alpaga-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+}
+button{
+     padding: 10px 20px;
+  margin: 8px 5px;       /* espace vertical 8px, horizontal 5px */
+  border-radius: 12px;   /* coins arrondis */
+  cursor: pointer;
+}
+
+
